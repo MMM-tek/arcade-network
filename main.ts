@@ -34,7 +34,7 @@ function newTab () {
     x_button()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Speciall, function (sprite, otherSprite) {
-    if (controller.A.isPressed()) {
+    if (controller.A.isPressed() || browserEvents.MouseLeft.isPressed()) {
         Click()
     }
 })
@@ -43,8 +43,12 @@ function startSearch (txt: string) {
     scene.setBackgroundImage(assets.image`Wifi`)
     x_button()
 }
+browserEvents.onMouseMove(function (x, y) {
+    browserEvents.setCursorVisible(false)
+    mySprite.setPosition(x + 5, y + 5)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Button, function (sprite, otherSprite) {
-    if (controller.A.isPressed()) {
+    if (controller.A.isPressed() || browserEvents.MouseLeft.isPressed()) {
         Click()
     }
 })
