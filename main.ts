@@ -4142,7 +4142,7 @@ mySprite = sprites.create(img`
     . . . . . . . . . . 
     `, SpriteKind.Player)
 let mySprite2 = sprites.create(assets.image`Cursor`, SpriteKind.Render)
-mySprite2.z = 1000
+mySprite2.z = 100
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
 mySprite.setFlag(SpriteFlag.Invisible, true)
 controller.moveSprite(mySprite, 70, 70)
